@@ -14,8 +14,11 @@
         <!-- nav element predstavuje navigacne menu-->
         <nav>
             <!-- router-link element predstavuje link na nejaku stranku nasej web aplikacie-->
-            <router-link to="/author">Author </router-link><!--link na stranku ktora je reprezentovana komponentom AuthorPage-->
-            <router-link to="/books">Books </router-link><!--link na stranku ktora je reprezentovana komponentom BooksPage-->
+            <router-link to="/">Home </router-link> <!--link na stranku ktora je reprezentovana komponentom Home-->
+            <router-link to="/about">About </router-link> <!--link na stranku ktora je reprezentovana komponentom About-->
+            <router-link to="/author">Author </router-link>
+            <router-link to="/books">Books </router-link>
+            <router-link to="/classes">Classes</router-link> <!--link na stranku ktora je reprezentovana komponentom Classes-->
         </nav>
         <!-- router-view element povie Vue Router-u, kde ma vykreslit komponent zodpovedajuci aktualnej route (trase)-->
         <router-view/>

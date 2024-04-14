@@ -1,12 +1,17 @@
 /*Nasa web aplikacia bude mat nasledujucu strukturu:
-    - stranka s informaciami o autorovi tejto stranky o Vas
-    - stranka s knihami (BooksPage)
-        - genericka (vyuziva parametre) podstranka pre detaily o konkretnej knihe (BookDetailsPage)
+    - hlavna stanka (HomePage)
+    - informacna stanka (AboutPage)
+    - stanka s tiedamy (ClassesPage)
+        - genericka (vyuziva parametre) podstranka pre jednu triedu (MyClassPage)
 */
 //importy komponentov reprezentujucich jednotlive stranky nasej web aplikacie
+import HomePage from  "./components/pages/HomePage.js"
+import AboutPage from "./components/pages/AboutPage.js"
 import AuthorPage from "./components/pages/AuthorPage.js"
 import BooksPage from "./components/pages/BooksPage.js"
 import BookDetailsPage from "./components/pages/BookDetailsPage.js"
+import ClassesPage from "./components/pages/ClassesPage.js"
+import MyClassPage from "./components/pages/MyClassPage.js"
 
 const {createApp} = Vue;
 const {createRouter, createWebHistory} = VueRouter; //funkcie ktoré potrebujeme vyuzivat z kniznice (scriptu) vue-router ktory sme pridali do index.html
@@ -23,6 +28,18 @@ const app = createApp({
 //  - cestou (path), ktoru nasledne vidime aj v URL browsera
 //  - komponentom ktory predstavuje stranku danej route-y 
 const routes = [
+    {   
+        path: "/", 
+        component: HomePage
+    },
+    {
+        path: "/about", 
+        component: AboutPage
+    },
+    {
+        path: "/classes", 
+        component: ClassesPage
+    },
     {
         path: "/author",
         component: AuthorPage
@@ -32,12 +49,16 @@ const routes = [
         component: BooksPage
     },
     {
-        path: "/books/:isbn",
+        path: "/books/:title",
         component: BookDetailsPage
+    },
+    {
+        path: "/classes/:id", //takto specifikujeme parameter stranky s nazvom id v rámci jej zodpovedajucej cesty (/:nazov_parametra)
+        component: MyClassPage
     },
 ]
 
-//vytvorenie router-a volanim funkcie createRouter
+//vytvorenie router-a volaním funkcie createRouter
 //ako argument odovzdávame objekt s vlastnosťami:
 //  - history, kde potrebujeme specifikovat mod historie:
 //      -> teraz ho specifikujeme ako HTML5 Mode, a to volanim funkcie createWebHistory z kniznice VueRouter
@@ -50,6 +71,6 @@ const router = createRouter({
 })
 
 //po vytvoreni smerovaca ho musime zaregistrovat ako plugin volaním metody use() nad našou aplikaciou
-//pozor najprv musim nad app zavolat metodu use() az potom mount()!!!
+//pozor najprv musím nad app zavolat metódu use() az potom mount()!!!
 app.use(router)
 app.mount("#app")
