@@ -1,0 +1,11 @@
+#post-form-page {
+  display: grid;
+  gap: 10px;
+}
+#post-form-page #post-form {
+  display: grid;
+  gap: 10px;
+}
+#post-form-page #post-form input, #post-form-page #post-form textarea, #post-form-page #post-form button {
+  padding: 10px;
+}

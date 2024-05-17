@@ -1,0 +1,30 @@
+#home-page {
+  display: grid;
+  gap: 20px;
+}
+#home-page .list {
+  display: grid;
+  gap: 10px;
+}
+#home-page .list .post-card {
+  border: 1px solid #acacac;
+  border-radius: 5px;
+  padding: 10px;
+  display: grid;
+  gap: 10px;
+  justify-content: start;
+}
+#home-page .list .post-card .delete-post {
+  display: inline-block;
+  padding: 10px 20px;
+  background: rgb(216, 64, 102);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  justify-self: start;
+  transition: 125ms;
+}
+#home-page .list .post-card .delete-post:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}

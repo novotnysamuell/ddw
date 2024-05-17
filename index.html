@@ -1,24 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VUE Routing</title>
+    <title>Databazy</title>
 
-    <script src="./vue.js"></script> <!-- vue script-->
-    <script src="./vue-router.js"></script> <!-- script nasho router-a (smerovaca)-->
-    <script src="./main.js" type="module" defer></script>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/home.css">
+    <link rel="stylesheet" href="styles/post-detail.css">
+    <link rel="stylesheet" href="styles/post-form.css">
+
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://unpkg.com/vue-router@4"></script>
+    <script type="module" src="main.js"></script>
 </head>
+
 <body>
-    <div id="app">
-        <!-- nav element predstavuje navigacne menu-->
-        <nav>
-            <!-- router-link element predstavuje link na nejaku stranku nasej web aplikacie-->
-            <router-link to="/author">Author </router-link><!--link na stranku ktora je reprezentovana komponentom AuthorPage-->
-            <router-link to="/books">Books </router-link><!--link na stranku ktora je reprezentovana komponentom BooksPage-->
-        </nav>
-        <!-- router-view element povie Vue Router-u, kde ma vykreslit komponent zodpovedajuci aktualnej route (trase)-->
-        <router-view/>
-    </div>
+    <section id="app">
+        <header>
+            <nav>
+                <router-link to="/">MyPosts</router-link>
+            </nav>
+            <router-link to="/post/form">New Post</router-link>
+        </header>
+        <main>
+            <router-view></router-view>
+        </main>
+    </section>
 </body>
 </html>

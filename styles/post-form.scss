@@ -1,0 +1,17 @@
+#post-form-page {
+    display: grid;
+    gap: 10px;
+    
+    #post-form {
+        display: grid;
+        gap: 10px;
+        
+        input, textarea, button {
+            padding: 10px;
+        }
+        
+        input {}
+        textarea {}
+        button {}
+    }
+}
